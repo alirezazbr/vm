@@ -1,18 +1,13 @@
 import React from 'react';
-import {
-	Box,
-	IconButton,
-	// MenuItem,
-	Stack,
-	Toolbar,
-	Typography,
-} from '@mui/material';
-import { Header } from '../../components';
+import { Box } from '@mui/material';
+
+import { Header, SideMenu } from '../../components';
 
 const Main = ({ children }) => {
     return (
         <Box component={'div'}>
             <Header />
+            <SideMenu />
             {children}
         </Box>
     );
