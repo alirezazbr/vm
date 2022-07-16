@@ -25,44 +25,44 @@ const SideMenu = () => {
                     <nav aria-label="main mailbox folders">
                         <List>
                             <ListItem disablePadding>
-                                <ListItemButton>
+                                <Li>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <Home sx={{ color: '#0d2d51' }} />
+                                        <Home className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Dashboard" sx={{ color: '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="Dashboard" className={'inner-li'} />
+                                </Li>
                             </ListItem>
                             <ListItem disablePadding>
-                                <ListItemButton onClick={() => navigate('/main/instances/location')} sx={{ backgroundColor: (pathname.includes('instances')) ? '#2c5eff' : 'transparent', borderRadius: '7px' }}>
+                                <Li onClick={() => navigate('/main/instances/location')} sx={{ backgroundColor: (pathname.includes('instances')) ? '#2c5eff' : 'transparent' }}>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <Add sx={{ color: (pathname.includes('instances')) ? '#ffffff' : '#0d2d51' }} />
+                                        <Add className={(pathname.includes('instances')) ? 'selected-inner-li' : 'inner-li' } />
                                     </ListItemIcon>
-                                    <ListItemText primary="Instances" sx={{ color: (pathname.includes('instances')) ? '#ffffff' : '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="Instances" className={(pathname.includes('instances')) ? 'selected-inner-li' : 'inner-li' } />
+                                </Li>
                             </ListItem>
                             <ListItem disablePadding>
-                                <ListItemButton>
+                                <Li>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <ContentCopy sx={{ color: '#0d2d51' }} />
+                                        <ContentCopy className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Snapshots" sx={{ color: '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="Snapshots" className={'inner-li'} />
+                                </Li>
                             </ListItem>
                             <ListItem disablePadding>
-                                <ListItemButton>
+                                <Li>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <Key sx={{ color: '#0d2d51' }} />
+                                        <Key className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="SSH Keys" sx={{ color: '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="SSH Keys" className={'inner-li'} />
+                                </Li>
                             </ListItem>
                             <ListItem disablePadding sx={{ pointerEvents: 'none', opacity: '0.5' }}>
-                                <ListItemButton>
+                                <Li>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <HomeMax sx={{ color: '#0d2d51' }} />
+                                        <HomeMax className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Volume" sx={{ color: '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="Volume" className={'inner-li'} />
+                                </Li>
                             </ListItem>
                         </List>
                     </nav>
@@ -70,20 +70,20 @@ const SideMenu = () => {
                     <nav aria-label="secondary mailbox folders">
                         <List>
                             <ListItem disablePadding>
-                                <ListItemButton>
+                                <Li>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <Wifi sx={{ color: '#0d2d51' }} />
+                                        <Wifi className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Networking" sx={{ color: '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="Networking" className={'inner-li'} />
+                                </Li>
                             </ListItem>
                             <ListItem disablePadding>
-                                <ListItemButton>
+                                <Li>
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
-                                        <TextSnippet sx={{ color: '#0d2d51' }} />
+                                        <TextSnippet className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Report" sx={{ color: '#0d2d51' }} />
-                                </ListItemButton>
+                                    <ListItemText primary="Report" className={'inner-li'} />
+                                </Li>
                             </ListItem>
                         </List>
                     </nav>
@@ -111,4 +111,26 @@ const MoreOption = styled(Button)(({ theme }) => ({
     width: '100%', 
     marginTop: '5px', 
     justifyContent: 'flex-start',
+    color: '#0d2d51',
+    '&:hover': {
+        backgroundColor: '#2c5eff',
+        color: '#ffffff',
+    }
   }));
+
+const Li = styled(ListItemButton)(({ theme }) => ({
+    borderRadius: '7px',
+    marginTop: '3px',
+    '& .inner-li': {
+        color: '#0d2d51',
+    },
+    '& .selected-inner-li': {
+        color: '#ffffff',
+    },
+    '&:hover': {
+        backgroundColor: '#2c5eff',
+        '& .inner-li': {
+            color: '#ffffff',
+        },
+    }
+}));
