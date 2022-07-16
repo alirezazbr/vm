@@ -1,83 +1,79 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/system';
-import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from "react-country-flag";
-import {
-	Box, Grid, Button, Typography, 
-} from '@mui/material';
-import { ChevronRight } from '@mui/icons-material';
+import { Box, Grid, Typography } from '@mui/material';
 
-import { RoadMap } from './components';
+import { translate } from '../../i18n';
 import { Container } from '../../components';
+import { RoadMap, NavigationButton } from './components';
 
 const InstanceLocation = () => {
-    const navigate = useNavigate();
     const [selectedCountry, setSelectedCountry] = useState(0);
 
     const countries = [
         {
             iso: 'SG',
-            countryName: 'Singapore',
+            countryName: translate('singapore'),
         },
         {
             iso: 'Us',
-            countryName: 'Los Angeles',
+            countryName: translate('losAngeles'),
         },
         {
             iso: 'US',
-            countryName: 'Dallas',
+            countryName: translate('dallas'),
         },
         {
             iso: 'FR',
-            countryName: 'Paris',
+            countryName: translate('paris'),
         },
         {
             iso: 'DE',
-            countryName: 'Germany',
+            countryName: translate('germany'),
         },
         {
             iso: 'US',
-            countryName: 'New York',
+            countryName: translate('newYork'),
         },
         {
             iso: 'US',
-            countryName: 'Buffalo',
+            countryName: translate('buffalo'),
         },
         {
             iso: 'FR',
-            countryName: 'Roubaix',
+            countryName: translate('roubaix'),
         },
         {
             iso: 'SG',
-            countryName: 'Singapore',
+            countryName: translate('singapore'),
         },
         {
             iso: 'Us',
-            countryName: 'Los Angeles',
+            countryName: translate('losAngeles'),
         },
         {
             iso: 'US',
-            countryName: 'Dallas',
+            countryName: translate('dallas'),
         },
         {
             iso: 'FR',
-            countryName: 'Paris',
+            countryName: translate('paris'),
         },
         {
             iso: 'DE',
-            countryName: 'Germany',
+            countryName: translate('germany'),
         },
         {
             iso: 'US',
-            countryName: 'New York',
+            countryName: translate('newYork'),
         },
         {
             iso: 'US',
-            countryName: 'Buffalo',
+            countryName: translate('buffalo'),
         },
         {
             iso: 'FR',
-            countryName: 'Roubaix',
+            countryName: translate('roubaix'),
         },
     ];
 
@@ -94,6 +90,7 @@ const InstanceLocation = () => {
                                 height: '155px',
                                 p: '10px',
                                 borderRadius: '7px',
+                                minWidth: '200px',
                             }}>
                                 <Grid item xs={12} display={'flex'} alignItems={'center'} flexDirection={'column'}
                                     onClick={() => setSelectedCountry(index)}
@@ -128,15 +125,7 @@ const InstanceLocation = () => {
                 </CountriesWrapper>
             </Box>
 
-            <Grid item xs={12} display={'flex'} justifyContent={'space-between'} flexDirection={'row'} sx={{ position: 'absolute', width: 'calc(100% - 130px)', bottom: '60px' }}>
-                <NavigateBtn variant="contained" endIcon={<ChevronRight />} onClick={() => navigate(-1)} sx={{ visibility: 'hidden' }}>
-                    prev Step
-                </NavigateBtn>
-                
-                <NavigateBtn variant="contained" endIcon={<ChevronRight />} onClick={() => navigate('/main/instances/type')}>
-                    Next Step
-                </NavigateBtn>
-            </Grid>
+            <NavigationButton firstStep path={'/main/instances/type'} />
         </Container>
     );
 };
@@ -157,16 +146,4 @@ const CountriesWrapper = styled(Grid)(({ theme }) => ({
         backgroundColor: '#dfe7ec',
         borderRadius: '7px',
     }
-  }));
-
-  const NavigateBtn = styled(Button)(({ theme }) => ({
-    width: '125px',
-    height: '41px',
-    mt: '5px',
-    color: '#0d2d51',
-    fontSize: '11px',
-    fontWeight: '600',
-    backgroundColor: '#fac802',
-    boxShadow: 'none',
-    textTransform: 'capitalize',
   }));

@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
+import { translate } from '../i18n';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
 	Box, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, Button,
@@ -29,7 +30,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <Home className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Dashboard" className={'inner-li'} />
+                                    <ListItemText primary={translate('dashboard')} className={'inner-li'} />
                                 </Li>
                             </ListItem>
                             <ListItem disablePadding>
@@ -37,7 +38,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <Add className={(pathname.includes('instances')) ? 'selected-inner-li' : 'inner-li' } />
                                     </ListItemIcon>
-                                    <ListItemText primary="Instances" className={(pathname.includes('instances')) ? 'selected-inner-li' : 'inner-li' } />
+                                    <ListItemText primary={translate('instances')} className={(pathname.includes('instances')) ? 'selected-inner-li' : 'inner-li' } />
                                 </Li>
                             </ListItem>
                             <ListItem disablePadding>
@@ -45,7 +46,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <ContentCopy className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Snapshots" className={'inner-li'} />
+                                    <ListItemText primary={translate('snapshots')} className={'inner-li'} />
                                 </Li>
                             </ListItem>
                             <ListItem disablePadding>
@@ -53,7 +54,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <Key className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="SSH Keys" className={'inner-li'} />
+                                    <ListItemText primary={translate('ssh')} className={'inner-li'} />
                                 </Li>
                             </ListItem>
                             <ListItem disablePadding sx={{ pointerEvents: 'none', opacity: '0.5' }}>
@@ -61,7 +62,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <HomeMax className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Volume" className={'inner-li'} />
+                                    <ListItemText primary={translate('volume')} className={'inner-li'} />
                                 </Li>
                             </ListItem>
                         </List>
@@ -74,7 +75,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <Wifi className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Networking" className={'inner-li'} />
+                                    <ListItemText primary={translate('networking')} className={'inner-li'} />
                                 </Li>
                             </ListItem>
                             <ListItem disablePadding>
@@ -82,7 +83,7 @@ const SideMenu = () => {
                                     <ListItemIcon sx={{ minWidth: 'unset', mr: '12px' }}>
                                         <TextSnippet className={'inner-li'} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Report" className={'inner-li'} />
+                                    <ListItemText primary={translate('report')} className={'inner-li'} />
                                 </Li>
                             </ListItem>
                         </List>
@@ -90,13 +91,13 @@ const SideMenu = () => {
 
                     <nav aria-label="secondary mailbox folders" style={{ marginTop: 'auto' }}>
                         <MoreOption variant="outlined" color={'inherit'} startIcon={<AttachMoney />}>
-                            Billing
+                            {translate('billing')}
                         </MoreOption>
                         <MoreOption variant="outlined" color={'inherit'} startIcon={<HelpOutline />}>
-                            Support
+                            {translate('support')}
                         </MoreOption>
                         <MoreOption variant="outlined" color={'inherit'} startIcon={<SportsSoccer />}>
-                            Help
+                            {translate('help')}
                         </MoreOption>
                     </nav>
                 </Box>

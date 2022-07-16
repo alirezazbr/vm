@@ -9,13 +9,13 @@ i18n
 			order: ['querystring', 'cookie', 'localStorage', 'sessionStorage', 'htmlTag', 'path', 'subdomain', 'navigator'],
 			caches:[],
 		},
-		lng: 'fa',
+		lng: 'en',
 		resources: {
 			en: {
 				translations: en,
 			},
 		},
-		fallbackLng: 'fa',
+		fallbackLng: 'en',
 		debug: false,
 		returnObjects: true,
 		// have a common namespace used around the full app

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { styled, alpha } from '@mui/system';
+import { translate } from '../i18n';
 import {
 	Box, Grid, Button, Menu, MenuItem, Avatar, Badge, Link, 
 } from '@mui/material';
@@ -49,7 +50,7 @@ function Header() {
 						<Avatar
 							alt={'user'}
 							variant={'rounded'}
-							src={''}
+							src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQomvUFpRZOwsvx_of1cMru_lfeuucB0imtyQ&usqp=CAU'}
 							sx={{ width: 45, height: 45, mr: '15px' }}
 						/>
 
@@ -65,7 +66,7 @@ function Header() {
 							endIcon={<KeyboardArrowDown />}
 							sx={{ color: '#0d2d51' }}
 						>
-							{'User\r'}
+							{translate('user')}{'\r'}
 						</Button>
 
 

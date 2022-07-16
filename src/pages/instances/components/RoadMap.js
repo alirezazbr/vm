@@ -1,16 +1,17 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+import { translate } from '../../../i18n';
 
 const RoadMap = () => {
     const location = useLocation();
     const { pathname } = location || { pathname: '' };
     const instancePages = [
-        {title: 'Instance Location', path: 'location'},
-        {title: 'Instance Type', path: 'type'},
-        {title: 'Instance Plan', path: 'plan'},
-        {title: 'Authentication', path: 'auth'},
-        {title: 'Finalize', path: 'finalize'},
+        {title: translate('instanceLocation'), path: 'location'},
+        {title: translate('instanceType'), path: 'type'},
+        {title: translate('instancePlan'), path: 'plan'},
+        {title: translate('authentication'), path: 'auth'},
+        {title: translate('finalize'), path: 'finalize'},
     ];
 
     return (
